@@ -8,7 +8,7 @@ import cors from 'cors'
 import bot from "./bot.js";
 const app=e()
 app.use(cors())
-app.use(express.json());
+app.use(e.json());
 configDotenv()
 app.post(`/bot${TOKEN}`, (req, res) => {
   bot.processUpdate(req.body);
