@@ -11,6 +11,8 @@ app.use(cors())
 app.use(e.json());
 configDotenv()
 app.post(`/bot${process.env.TOKEN}`, (req, res) => {
+    console.log(req.body);
+    console.log(bot.getWebHookInfo());
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
@@ -20,5 +22,5 @@ callbackHandler()
 settingsCommand()
 app.listen(3000,async()=>{
      console.log("🚀 Bot server is running...");
-    await bot.setWebHook(`translatebot-production-05e4.up.railway.app/bot${process.env.TOKEN}`)
+    await bot.setWebHook(`http://translatebot-production-05e4.up.railway.app/bot${process.env.TOKEN}`)
 })
