@@ -10,9 +10,10 @@ const app=e()
 app.use(cors())
 app.use(e.json());
 configDotenv()
-app.post(`/bot${process.env.TOKEN}`, (req, res) => {
+app.post(`/bot${process.env.TOKEN}`, async(req, res) => {
     console.log(req.body);
-    console.log(bot.getWebHookInfo());
+   const info=awaitbot.getWebHookInfo();
+   console.log(info);
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
