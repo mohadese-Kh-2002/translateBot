@@ -4,5 +4,5 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const bot=new TelegramBot(process.env.TOKEN,{webHook:true})
+const bot=new TelegramBot(process.env.TOKEN,{polling:true})
 export default bot
