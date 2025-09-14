@@ -10,7 +10,7 @@ const app=e()
 app.use(cors())
 app.use(e.json());
 configDotenv()
-app.post(`/bot${TOKEN}`, (req, res) => {
+app.post(`/bot${process.env.TOKEN}`, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
@@ -20,5 +20,5 @@ callbackHandler()
 settingsCommand()
 app.listen(3000,async()=>{
      console.log("🚀 Bot server is running...");
-    await bot.setWebHook(`${process.env.URL}/bot${TOKEN}`)
+    await bot.setWebHook(`${process.env.URL}/bot${process.env.TOKEN}`)
 })
