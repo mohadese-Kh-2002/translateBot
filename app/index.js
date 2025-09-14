@@ -12,7 +12,7 @@ app.use(e.json());
 configDotenv()
 app.post(`/bot${process.env.TOKEN}`, async(req, res) => {
     console.log(req.body);
-   const info=awaitbot.getWebHookInfo();
+   const info=await bot.getWebHookInfo();
    console.log(info);
   bot.processUpdate(req.body);
   res.sendStatus(200);
