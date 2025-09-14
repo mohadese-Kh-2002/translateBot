@@ -22,5 +22,5 @@ callbackHandler()
 settingsCommand()
 app.listen(3000,async()=>{
      console.log("🚀 Bot server is running...");
-    await bot.setWebHook(`http://translatebot-production-05e4.up.railway.app/bot${process.env.TOKEN}`)
+    await bot.setWebHook(`https://translatebot-production-05e4.up.railway.app/bot${process.env.TOKEN}`)
 })
