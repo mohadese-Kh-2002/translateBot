@@ -6,17 +6,17 @@ dotenv.config();
 
 const bot = new TelegramBot(process.env.TOKEN, {
   polling: {
-    interval: 300,
-    timeout: 30,
-    limit: 100,
-    retryTimeout: 5000,
-    allowedUpdates: [
-      "message",
-      "callback_query",
-      "edited_message",
-      "channel_post",
-      "edited_channel_post",
-    ],
+    params: {
+      timeout: 30,
+      limit: 100,
+     allowed_updates: [
+        "message",
+        "callback_query",
+        "edited_message",
+        "channel_post",
+        "edited_channel_post",
+      ]
+    },
   },
 });
 export default bot;
