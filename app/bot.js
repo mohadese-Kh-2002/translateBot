@@ -19,8 +19,8 @@ const bot = new TelegramBot(process.env.TOKEN, {
     },
   },
 });
-bot.deleteWebHook().then(() => {
-  console.log("Webhook deleted, polling started...");
-});
+// bot.deleteWebHook().then(() => {
+//   console.log("Webhook deleted, polling started...");
+// });
 
 export default bot;
